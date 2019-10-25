@@ -2,7 +2,7 @@ import socket
 import ssl
 import base64
 msg = "\r\n I love computer networks!"
-endmsg = ".\r\n.\r\n"
+endmsg = "\r\n.\r\n"
 # Choose a mail server (e.g. Google mail server) and call it mailserver 
 mailserver =  'smtp.gmail.com'
 # Create socket called clientSocket and establish a TCP connection with mailserver
@@ -85,7 +85,7 @@ print (recv2)
 #Send data
 clientSocket.send(("Subject: SMTP Email Test! \r\n").encode())
 clientSocket.send(("To: uphunyal1@gmail.com \r\n").encode())
-clientSocket.send(("We did it! Successfully sent the email!").encode())
+clientSocket.send(msg.encode())
 
 # Message ends with a single period.
 clientSocket.send(endmsg.encode())
